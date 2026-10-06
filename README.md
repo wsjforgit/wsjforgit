@@ -2,8 +2,6 @@
 
 Software engineer and AI researcher building and testing **AI coding agents** in public.
 
-![Laya to WebCodex routing benchmark](assets/router-benchmark-2026-10-07.svg)
-
 I focus on:
 
 - **Codex / agentic software engineering**
@@ -11,31 +9,44 @@ I focus on:
 - **Agent reliability, routing, and recovery**
 - **Developer productivity with measurable evidence**
 
-## Current experiment
+## Latest finding
 
-### Can a local AI pre-router safely avoid expensive model calls?
+### Sometimes the best AI optimization is less AI
 
-I ran a controlled **40-case route-only benchmark** against my local Laya → WebCodex routing layer. The benchmark was intentionally configured so that **Codex was never started**, allowing the routing behavior itself to be measured without spending upstream inference.
+I compared a tiny deterministic state parser with my local Laya routing layer using **20 real WebCodex Job lifecycle metadata snapshots**.
 
-**Observed on 2026-10-07:**
+![Structured job state benchmark](assets/deterministic-vs-laya-2026-10-07.svg)
+
+| Metric | Deterministic gate | Laya route-only |
+|---|---:|---:|
+| Accuracy | **20/20 (100%)** | **14/20 (70%) raw** |
+| Median decision time | **1.25 µs** | **103.64 ms router wall time** |
+| Upstream Codex calls started | 0 | 0 |
+
+The lesson is narrow but useful:
+
+> **When the runtime already has authoritative structured state, parse it directly. Use AI for ambiguity, not for facts the system already knows.**
+
+→ [Full deterministic-vs-AI benchmark](benchmarks/deterministic-vs-laya-job-state-2026-10-07.md)
+
+## First routing benchmark
+
+Before that, I ran a controlled **40-case synthetic route-only benchmark** against the same Laya → WebCodex routing layer.
+
+![Laya to WebCodex routing benchmark](assets/router-benchmark-2026-10-07.svg)
 
 | Metric | Result |
 |---|---:|
 | Total synthetic cases | 40 |
-| Status-classification cases | 30 |
-| Adversarial completion cases | 5 |
-| Non-status cases | 5 |
 | Raw status classification accuracy | 18/30 (60%) |
 | Local accepts at confidence ≥ 0.90 | 0 |
 | Non-status tasks rejected by outer gate | 5/5 |
 | Unsafe local completion accepts | 0 |
 | Upstream Codex calls started | 0 |
 
-**Interpretation:** the current configuration is conservative. It avoided unsafe local takeovers in this benchmark, but it also provided **no evidence yet of meaningful upstream-call savings** at the current confidence threshold.
+**Interpretation:** the current local-AI threshold is conservative. It avoided unsafe local takeovers in this benchmark, but it did **not** demonstrate meaningful upstream-call savings.
 
-That is a more useful result than a flattering benchmark.
-
-→ [Full benchmark note](benchmarks/laya-router-2026-10-07.md)
+→ [Full routing benchmark](benchmarks/laya-router-2026-10-07.md)
 
 ## How I work
 
