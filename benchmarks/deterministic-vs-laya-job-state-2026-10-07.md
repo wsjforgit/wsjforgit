@@ -39,6 +39,13 @@ The prototype intentionally used simple rules:
 - running / pending / queued with no exit code → `running`
 - otherwise → fallback
 
+The public prototype is available here:
+
+- [deterministic_status_gate.py](../experiments/deterministic_status_gate.py)
+- [edge-case tests](../experiments/test_deterministic_status_gate.py)
+
+The nine published edge cases were executed after publication and **9/9 passed**.
+
 ## Results
 
 | Metric | Deterministic gate | Laya route-only |
