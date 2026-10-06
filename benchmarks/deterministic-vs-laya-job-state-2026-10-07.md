@@ -58,6 +58,22 @@ The nine published edge cases were executed after publication and **9/9 passed**
 
 Mean raw Laya confidence was **0.4717**, well below the configured 0.90 local-accept threshold.
 
+### Follow-up: live running snapshot
+
+The original 20-case set had no live `running` job, so I launched a harmless local `sleep 30` WebCodex Job and captured its state while it was actually running:
+
+- `status=running`
+- `terminal=false`
+- `activity_state=working`
+- `activity_phase=process_running`
+- no exit code yet
+
+The deterministic rule classified it as `running`.
+
+Laya also produced the correct raw decision, `running`, with confidence **0.6799**. Because that was below the configured **0.90** threshold, the live router still failed closed to the upstream path. The route-only test did not start Codex.
+
+The sleep Job then completed normally with exit code 0.
+
 ## Interpretation
 
 This is not a claim that deterministic logic is generally better than AI.
@@ -90,8 +106,8 @@ A small deterministic layer can remove a whole class of unnecessary model decisi
 
 ## Limits
 
-- The 20 cases were selected from real Job lifecycle metadata, but the classification prompt was standardized.
-- There were no live `running` snapshots in this sample.
+- The 20-case benchmark used real Job lifecycle metadata, but the Laya classification prompt was standardized.
+- The live-running observation was a separate follow-up sample rather than part of the original 20-case aggregate.
 - This benchmark does not measure end-to-end product latency or token savings.
 - The deterministic rule should still fail closed on unknown or conflicting states.
 
@@ -99,7 +115,7 @@ A small deterministic layer can remove a whole class of unnecessary model decisi
 
 Add a deterministic metadata gate in front of the local classifier **without changing the live production path yet**, then evaluate on:
 
-- real running snapshots;
+- additional real running snapshots;
 - conflicting state metadata;
 - recovered jobs;
 - server-restart reconciliation;
