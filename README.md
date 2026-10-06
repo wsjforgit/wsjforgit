@@ -9,6 +9,16 @@ I focus on:
 - **Agent reliability, routing, and recovery**
 - **Developer productivity with measurable evidence**
 
+## Free resource
+
+### [Agent Reliability Checklist](guides/agent-reliability-checklist.md)
+
+A practical 24-point scoring checklist for state, tool selection, permissions, checkpoints, idempotency, verification, fallbacks, observability, recovery, cost, and evaluation.
+
+Core principle:
+
+> **Use deterministic facts first. Use AI for ambiguity. Use stronger AI for reasoning. Use humans for authority.**
+
 ## Latest finding
 
 ### Sometimes the best AI optimization is less AI
