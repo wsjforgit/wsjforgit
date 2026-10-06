@@ -2,6 +2,8 @@
 
 Software engineer and AI researcher building and testing **AI coding agents** in public.
 
+![Laya to WebCodex routing benchmark](assets/router-benchmark-2026-10-07.svg)
+
 I focus on:
 
 - **Codex / agentic software engineering**
