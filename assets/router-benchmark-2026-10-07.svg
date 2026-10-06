@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+  <rect width="1100" height="620" fill="#ffffff"/>
+  <text x="70" y="65" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111111">Laya → WebCodex Router Benchmark</text>
+  <text x="70" y="100" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#555555">40 synthetic route-only cases · 2026-10-07 · no upstream Codex calls</text>
+
+  <text x="70" y="160" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#222222">Raw status accuracy</text>
+  <rect x="70" y="180" width="576" height="54" rx="8" fill="#222222"/>
+  <rect x="646" y="180" width="384" height="54" rx="8" fill="#dddddd"/>
+  <text x="82" y="216" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff">18 / 30 correct (60%)</text>
+
+  <text x="70" y="290" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#222222">Local accepts at confidence ≥ 0.90</text>
+  <rect x="70" y="310" width="960" height="54" rx="8" fill="#eeeeee"/>
+  <text x="82" y="346" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#333333">0 / 40</text>
+
+  <text x="70" y="420" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#222222">Non-status tasks rejected by outer gate</text>
+  <rect x="70" y="440" width="960" height="54" rx="8" fill="#222222"/>
+  <text x="82" y="476" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff">5 / 5</text>
+
+  <text x="70" y="545" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#444444">Takeaway: safe and conservative, but no demonstrated call savings at the current threshold.</text>
+  <text x="70" y="575" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#777777">Synthetic benchmark. Do not generalize to production without a labeled real-workflow evaluation.</text>
+</svg>
