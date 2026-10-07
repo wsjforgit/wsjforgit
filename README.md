@@ -1,74 +1,50 @@
 # Shengjie Builds AI
 
-Software engineer and AI researcher building and testing **AI coding agents** in public.
+Software engineer and AI researcher building and testing **AI coding agents** with measured evidence.
 
 I focus on:
-
 - **Codex / agentic software engineering**
 - **MCP and tool orchestration**
-- **Agent reliability, routing, and recovery**
-- **Developer productivity with measurable evidence**
+- **Agent reliability, routing, recovery, and verification**
+- **Developer productivity experiments**
 
-## Free resource
+## Start here
 
-### [Agent Reliability Checklist](guides/agent-reliability-checklist.md)
+- [Resource Hub](guides/resource-hub.md)
+- [Agent Reliability Checklist](guides/agent-reliability-checklist.md)
+- [10-minute Self-Audit](guides/self-audit-quickstart.md)
+- [Measured Benchmark Index](guides/measured-agent-reliability-benchmarks.md)
 
-A practical 24-point scoring checklist for state, tool selection, permissions, checkpoints, idempotency, verification, fallbacks, observability, recovery, cost, and evaluation.
-
-Core principle:
-
-> **Use deterministic facts first. Use AI for ambiguity. Use stronger AI for reasoning. Use humans for authority.**
-
-## Latest finding
+## Latest measured finding
 
 ### Sometimes the best AI optimization is less AI
 
-I compared a tiny deterministic state parser with my local Laya routing layer using **20 real WebCodex Job lifecycle metadata snapshots**.
+On 20 real WebCodex Job lifecycle metadata snapshots:
+- deterministic state rule: **20/20**
+- local model raw classification: **14/20**
+- deterministic median decision time: **1.25 µs**
+- local router median wall time: **103.64 ms**
+- upstream Codex calls started in the route-only test: **0**
 
-![Structured job state benchmark](assets/deterministic-vs-laya-2026-10-07.svg)
+The narrow engineering lesson:
 
-| Metric | Deterministic gate | Laya route-only |
-|---|---:|---:|
-| Accuracy | **20/20 (100%)** | **14/20 (70%) raw** |
-| Median decision time | **1.25 µs** | **103.64 ms router wall time** |
-| Upstream Codex calls started | 0 | 0 |
+> When authoritative structured state already exists, parse it directly. Use AI for ambiguity, not for facts the runtime already knows.
 
-The lesson is narrow but useful:
+See [Structured State Before AI](guides/case-study-structured-state.md).
 
-> **When the runtime already has authoritative structured state, parse it directly. Use AI for ambiguity, not for facts the system already knows.**
+## Current public experiments
 
-→ [Full deterministic-vs-AI benchmark](benchmarks/deterministic-vs-laya-job-state-2026-10-07.md)
-
-## First routing benchmark
-
-Before that, I ran a controlled **40-case synthetic route-only benchmark** against the same Laya → WebCodex routing layer.
-
-![Laya to WebCodex routing benchmark](assets/router-benchmark-2026-10-07.svg)
-
-| Metric | Result |
-|---|---:|
-| Total synthetic cases | 40 |
-| Raw status classification accuracy | 18/30 (60%) |
-| Local accepts at confidence ≥ 0.90 | 0 |
-| Non-status tasks rejected by outer gate | 5/5 |
-| Unsafe local completion accepts | 0 |
-| Upstream Codex calls started | 0 |
-
-**Interpretation:** the current local-AI threshold is conservative. It avoided unsafe local takeovers in this benchmark, but it did **not** demonstrate meaningful upstream-call savings.
-
-→ [Full routing benchmark](benchmarks/laya-router-2026-10-07.md)
+- [G02 — Confidence Threshold Calibration](guides/g02-confidence-threshold-calibration.md)
+- [G05 — Curated vs Broad MCP Tool Set Protocol](guides/g05-curated-vs-broad-tools-protocol.md)
+- [Agent Reliability Maturity Matrix](guides/agent-reliability-maturity-matrix.md)
+- [Demand Qualification Rubric](guides/demand-qualification-rubric.md)
 
 ## How I work
 
-I publish:
+I publish negative results, failure autopsies, explicit limitations, and reproducible experiments where possible.
 
-- measured results, including negative results;
-- failure autopsies instead of polished demos only;
-- clear separation between **measured facts** and **hypotheses**;
-- reproducible agent-engineering experiments when possible.
-
-I do **not** claim token, latency, or cost savings until the experiment actually measures them.
+I do **not** claim token, latency, cost, or business impact without measurement.
 
 ---
 
-**Building in public:** AI Coding Agents · MCP · Codex · Agent Reliability · Developer Productivity
+**AI Coding Agents · MCP · Codex · Agent Reliability · Developer Productivity**
