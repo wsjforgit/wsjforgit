@@ -13,6 +13,7 @@ I focus on:
 - [Resource Hub](guides/resource-hub.md)
 - [Agent Reliability Checklist](guides/agent-reliability-checklist.md)
 - [10-minute Self-Audit](guides/self-audit-quickstart.md)
+- [Free Agent Reliability Audit Kit](free-kit/README.md)
 - [Measured Benchmark Index](guides/measured-agent-reliability-benchmarks.md)
 - [Request an Agent Reliability Audit](https://github.com/wsjforgit/wsjforgit/issues/new?template=agent-reliability-audit.yml) — for a real workflow + concrete reliability problem
 
