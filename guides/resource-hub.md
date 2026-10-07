@@ -21,6 +21,12 @@ Evidence-backed resources for AI coding agents, MCP workflows, routing, recovery
 - [Deterministic job-state gate](../experiments/deterministic_status_gate.py)
 - [Edge-case tests](../experiments/test_deterministic_status_gate.py)
 
+## Have a real workflow problem?
+
+If you have a concrete agent workflow, a reproducible reliability problem, and a specific request for help, use the [Agent Reliability Audit request form](https://github.com/wsjforgit/wsjforgit/issues/new?template=agent-reliability-audit.yml).
+
+Please do not include credentials, private customer data, or secrets.
+
 ## Working principle
 
 > Use deterministic facts first. Use AI for ambiguity. Use stronger AI for reasoning. Use humans for authority.
