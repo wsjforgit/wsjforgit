@@ -1,0 +1,52 @@
+name: Agent reliability audit request
+description: Share a real agent workflow and the reliability problem you want help scoping.
+title: "[Agent Audit] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a real AI coding-agent, MCP, or tool-using workflow.
+        Do not include passwords, API keys, private customer data, or other secrets.
+        This is a demand-discovery and scoping channel, not a promise of paid service availability.
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: What outcome should the agent complete, and which systems or tools does it use?
+      placeholder: Describe one concrete workflow.
+    validations:
+      required: true
+  - type: dropdown
+    id: pain
+    attributes:
+      label: Primary reliability problem
+      options:
+        - Flaky completion
+        - Duplicate actions after retry
+        - Weak recovery after disconnect
+        - Hard-to-verify success
+        - Tool routing confusion
+        - Unclear permission boundary
+        - Too many expensive model calls
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence you can share publicly
+      description: Provide a redacted log excerpt, failure pattern, success definition, or benchmark summary. Do not post secrets.
+    validations:
+      required: true
+  - type: dropdown
+    id: desired
+    attributes:
+      label: What would be useful?
+      options:
+        - Self-audit guidance
+        - Benchmark design
+        - Recovery/idempotency review
+        - Permissions/tool-boundary review
+        - Fixed-scope implementation audit
+    validations:
+      required: true
