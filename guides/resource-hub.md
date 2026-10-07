@@ -7,6 +7,9 @@ Evidence-backed resources for AI coding agents, MCP workflows, routing, recovery
 - [10-minute Self-Audit Quickstart](self-audit-quickstart.md)
 - [Agent Reliability Audit Request Template](agent-reliability-audit-request.md)
 
+## Free toolkit
+- [Agent Reliability Audit Kit — Free Beta](../free-kit/README.md)
+
 ## Measured evidence
 - [Structured State Before AI](case-study-structured-state.md)
 - [Confidence Threshold Calibration](g02-confidence-threshold-calibration.md)
